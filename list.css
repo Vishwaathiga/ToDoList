@@ -1,0 +1,296 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #7896d1;
+  margin: 0;
+  padding: 40px 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.input-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#taskInput,
+#subject,
+#priority {
+  flex: 1 1 150px;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-width: 120px;
+}
+
+#addBtn {
+  flex-shrink: 0;
+  height: 38px;
+  padding: 0 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#addBtn:hover {
+  background-color: #0056b3;
+}
+
+#taskList {
+  list-style: none;
+  margin-top: -10px;
+  padding: 0;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.task-left input[type="checkbox"] {
+  transform: scale(1.1);
+}
+
+.task-subject,
+.task-priority {
+  background: #e1e5eb;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.action-btn {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: transform 0.1s ease;
+}
+
+.action-btn:hover {
+  transform: scale(1.2);
+}
+
+#clearBtn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#clearBtn:hover {
+  background: #eee;
+}
+
+/* ===== MODAL STYLES (matches your structure) ===== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+
+.modal-step input,
+.modal-step select {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+
+.modal-step button:hover {
+  background: #0056b3;
+} 
+.modal-content {
+  background: white;
+  padding: 10px 18px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 380px;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-step {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-step label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.modal-step input[type="text"],
+.modal-step input[type="date"],
+.modal-step select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.modal-step .button-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.modal-step button {
+  padding: 8px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.modal-step button:hover {
+  background: #0056b3;
+}
+.hidden {
+  display: none;
+}
+#editDueDate,
+#dueDate {
+  height: 34px;
+  padding: 4px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  width: 440px;
+  min-width: 120px;
+}
+
+
+.task-date {
+  background: #f0f0f0;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-left: 5px;
+}
+.tag-group {
+ display: flex;
+ align-items: center;
+ gap: 6px;
+}
+
+.task-subject,
+.task-priority,
+.task-date {
+ display: inline-block;
+ margin-right: 6px;
+ background: #e1e5eb;
+ padding: 3px 6px;
+ border-radius: 4px;
+ font-size: 12px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  font-size: 14px;
+  gap: 10px;
+}
+input[type="date"] {
+  height: 38px;
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 10px;
+  box-sizing: border-box;
+}
+
+ .tag-group {
+  display: flex;
+  width: 100%;
+  max-width: 300px;
+  justify-content: space-between;
+}
+
+/* .tag-group .task-subject,
+.tag-group .task-priority,
+.tag-group .task-date {
+  min-width: 80px;
+  text-align: center;
+}  */

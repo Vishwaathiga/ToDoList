@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List with Priority</title>
+  <link rel="stylesheet" href="list.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📚 To-Do List</h1>
+
+    <div class="input-section">
+      <select id="subject">
+        <option value="Math">Math</option>
+        <option value="Science">Science</option>
+        <option value="English">English</option>
+        <option value="Otherlang">Otherlang</option>
+        <option value="Extracurricular">Extracurricular</option>
+      </select>
+      <input type="text" id="taskInput" placeholder="Enter a new task" required/>
+      <select id="priority">
+        <option value="High">High 🔴</option>
+        <option value="Medium">Medium 🟡</option>
+        <option value="Low">Low 🟢</option>
+      </select>
+      <input type="date" id="dueDate" />
+      <button id="addBtn">Add Task</button>
+    </div>
+
+    <ul id="taskList"></ul>
+
+    <button id="clearBtn">Clear All Tasks</button>
+  </div>
+
+
+  <div id="editModal" class="modal hidden">
+  <div class="modal-content">
+    <h3>Edit Task</h3>
+
+    <label>Task:</label>
+    <input type="text" id="editTaskInput" />
+
+    <label>Subject:</label>
+    <select id="editSubjectSelect">
+      <option value="Math">Math</option>
+      <option value="Science">Science</option>
+      <option value="English">English</option>
+      <option value="Otherlang">Otherlang</option>
+      <option value="Extracurricular">Extracurricular</option>
+    </select>
+
+    <label>Priority:</label>
+    <select id="editPrioritySelect">
+      <option value="High">High 🔴</option>
+      <option value="Medium">Medium 🟡</option>
+      <option value="Low">Low 🟢</option>
+    </select>
+
+    <label>Due Date:</label>
+    <input type="date" id="editDueDate" />
+<div class="modal-step button-row">
+ <button id="saveEdit">Save</button>
+ <button id="cancelEdit">Cancel</button>
+</div>
+  </div>
+</div>
+  <script src="list.js"></script>
+</body>
+</html>
