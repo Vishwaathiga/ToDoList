@@ -72,7 +72,7 @@ function renderTasks() {
     dateTag.textContent = task.dueDate ? `📅 ${task.dueDate}` : '';
 
     const tagGroup = document.createElement('div');
-    tagGroup.className = 'tag-group'; // You should define this in CSS for alignment
+    tagGroup.className = 'tag-group'; 
     tagGroup.appendChild(subjectTag);
     tagGroup.appendChild(priorityTag);
     tagGroup.appendChild(dateTag);
